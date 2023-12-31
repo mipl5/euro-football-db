@@ -1,5 +1,7 @@
 CREATE SCHEMA if not exists euro_football;
 
+DROP SCHEMA if exists euro_football;
+
 create table if not exists footballClubs(
 	club_id int NOT NULL,
     PRIMARY KEY (club_id),
