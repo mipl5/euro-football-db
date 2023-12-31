@@ -1,3 +1,5 @@
+CREATE SCHEMA if not exists euro_football;
+
 create table if not exists footballClubs(
 	club_id int NOT NULL,
     PRIMARY KEY (club_id),
@@ -10,7 +12,6 @@ create table if not exists footballClubs(
     club_owner varchar(100) NULL,
     club_nickname varchar(100) NOT NULL
 );
-drop table footballClubs;
 insert into footballClubs(club_id, club_name, club_est, club_chairman, club_league, club_headCoach, club_country, club_owner, club_nickname)
 values (1, "Chelsea F.C.", 1905, "Todd Boehly", "Premier League", "Mauricio Pochettino", "England", "BlueCo", "The Blues"),
 (2, "Arsenal F.C.", 1886, "Stan & Josh Kroenke", "Premier League", "Mikel Arteta", "England", "Kroenke Spots & Entertainment", "The Gunners"),
@@ -32,7 +33,6 @@ create table if not exists FootballPlayers(
     
 	PRIMARY KEY (players_id)
 );
-drop table FootballPlayers;
 insert into FootballPlayers (players_id, players_first_name, players_last_name, players_current_football_club, players_position_s, players_number, players_birth_yr, players_height_in_meters, players_nationality)
 values (1, "Erling", "Haaland", "Manchester City F.C.","striker", 9,2000,1.94, "Norwegian"),
 (2, "Kai", "Havertz", "Arsenal F.C.","attacking midfielder, forward, left-back",29, 1999, 1.93, "German"),
@@ -58,8 +58,6 @@ COUNTRY_FIFA_CODE VARCHAR (255),
     NICKNAME VARCHAR (255)
 );
 
-DROP TABLE IF EXISTS FOOTBALLNATIONALTEAMS;
-
 INSERT INTO FOOTBALLNATIONALTEAMS(
 COUNTRY_FIFA_CODE,COUNTRY_NAME, ASSOCIATION, CAPTAIN, HEAD_COACH, MOST_CAPS, HOME_STADIUM, NICKNAME
 ) VALUES ("ENG","England", "Fédération Française de Football", "Harry Kane", "Gareth Southgate", "Peter Shilton (125)", "Wembley Stadium", "The Three Lions"),
@@ -73,7 +71,6 @@ STADIUM_ARENA_NAME VARCHAR (255),
 LOCATION VARCHAR (255),
 STADIUM_CAPACITY INT
 );
-DROP TABLE IF EXISTS STADIUMS_ARENAS;
 INSERT INTO STADIUMS_ARENAS (
 		STADIUM_ID, STADIUM_ARENA_NAME, LOCATION,STADIUM_CAPACITY
 ) VALUES (1, "Stamford Bridge", "Fulham, London, SW6 England", 40343), (2, "Allianz Arena", "Munich, Bavaria, Germany", 75000);
